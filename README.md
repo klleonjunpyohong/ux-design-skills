@@ -9,19 +9,27 @@ Claude Code에서 사용할 수 있는 UX 설계 스킬 모음입니다.
 
 ### 1. 설치
 
-```bash
-# 레포 클론
-git clone https://github.com/klleonjunpyohong/ux-design-skills.git
+**방법 A: npx skills (추천)**
 
-# 설치 스크립트 실행 (자기 프로젝트 경로를 넣어주세요)
+```bash
+npx skills add https://github.com/klleonjunpyohong/ux-design-skills.git
+```
+
+**방법 B: 설치 스크립트**
+
+```bash
+git clone https://github.com/klleonjunpyohong/ux-design-skills.git
 cd ux-design-skills
 chmod +x install.sh
 ./install.sh /path/to/your/project
 ```
 
-설치하면 프로젝트의 `.claude/commands/` 폴더에 스킬 파일이 복사됩니다.
+**방법 C: 수동 복사**
 
-> 수동으로 하려면: `cp commands/*.md /your-project/.claude/commands/`
+```bash
+git clone https://github.com/klleonjunpyohong/ux-design-skills.git
+cp ux-design-skills/commands/*.md /your-project/.claude/commands/
+```
 
 ### 2. 사용
 
@@ -127,15 +135,14 @@ Claude Code에서 아래 명령어를 입력하면 됩니다:
 ## 파일 구조
 
 ```
-commands/
-├── ux-design.md              ← 오케스트레이터
-├── 1-ux-problem-definer.md   ← 1단계: 문제 정의
-├── 2-ux-flow-designer.md     ← 2단계: 흐름 설계
-├── 3-ux-audit.md             ← 3단계: UX 감사
-└── 4-ux-prototype.md         ← 4단계: 프로토타입
+ux-design/SKILL.md              ← 오케스트레이터
+1-ux-problem-definer/SKILL.md   ← 1단계: 문제 정의
+2-ux-flow-designer/SKILL.md     ← 2단계: 흐름 설계
+3-ux-audit/SKILL.md             ← 3단계: UX 감사
+4-ux-prototype/SKILL.md         ← 4단계: 프로토타입
+commands/                       ← 수동 설치용 (동일 내용)
+install.sh                      ← 설치 스크립트
 ```
-
-설치하면 위 파일들이 프로젝트의 `.claude/commands/`에 복사됩니다.
 
 ## License
 
