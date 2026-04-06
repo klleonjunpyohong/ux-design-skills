@@ -1,7 +1,7 @@
 # UX Design Skills for Claude Code
 
 Claude Code에서 사용할 수 있는 UX 설계 스킬 모음입니다.  
-4단계 프로세스로 **문제 정의 → 흐름 설계 → UX 감사 → 프로토타입**까지 체계적으로 진행합니다.
+5단계 프로세스로 **문제 정의 → 흐름 설계 → UX 감사 → 프로토타입 → 디자인 시스템 & MVP**까지 체계적으로 진행합니다.
 
 ---
 
@@ -47,6 +47,7 @@ Claude Code에서 아래 명령어를 입력하면 됩니다:
 /2-ux-flow-designer      # 2단계: 흐름 설계
 /3-ux-audit              # 3단계: UX 감사
 /4-ux-prototype          # 4단계: 프로토타입
+/5-design-to-mvp         # 5단계: 디자인 시스템 & MVP
 ```
 
 ### 3. 요구사항
@@ -58,8 +59,8 @@ Claude Code에서 아래 명령어를 입력하면 됩니다:
 ## 프로세스 개요
 
 ```
-1단계: 문제 정의  →  2단계: 흐름 설계  →  3단계: UX 감사  →  4단계: 프로토타입
-(/1-ux-problem-definer) (/2-ux-flow-designer)   (/3-ux-audit)      (/4-ux-prototype)
+1: 문제 정의  →  2: 흐름 설계  →  3: UX 감사  →  4: 프로토타입  →  5: 디자인 시스템 & MVP
+(/1-ux-problem-definer) (/2-ux-flow-designer) (/3-ux-audit) (/4-ux-prototype) (/5-design-to-mvp)
 ```
 
 각 단계가 끝나면 자동으로 다음 단계를 안내합니다.  
@@ -72,6 +73,7 @@ Claude Code에서 아래 명령어를 입력하면 됩니다:
 | 2 | `/2-ux-flow-designer` | 흐름, IA, UI 구조, UX 라이팅 설계 | `ux-flow.md` |
 | 3 | `/3-ux-audit` | 8가지 관점으로 UX 검토 | `ux-audit-report.md` |
 | 4 | `/4-ux-prototype` | HTML 프로토타입 생성 | `prototype/` 폴더 |
+| 5 | `/5-design-to-mvp` | 디자인 시스템 구축 + MVP 코드 구현 | `design-system.md` + MVP 코드 |
 
 ---
 
@@ -118,6 +120,28 @@ Claude Code에서 아래 명령어를 입력하면 됩니다:
 - A/B 변형안 포함
 - 접근성 반영 (색상 대비, 터치 영역, alt 텍스트)
 
+### 5단계: 디자인 시스템 & MVP (`/5-design-to-mvp`)
+
+프로토타입으로 확인된 설계를 실제 동작하는 제품으로 만듭니다.  
+7개 Phase를 대화형으로 진행하며, 모든 결정은 **추천 → 사용자 확인 → 반영** 사이클로 이루어집니다.
+
+| Phase | 하는 일 | 산출물 |
+|-------|---------|--------|
+| 1. 디자인 컨셉 | 전체 분위기, 스타일 방향 결정 | 컨셉 키워드 |
+| 2. 컬러 | 컬러 팔레트 (Primary, Secondary, Semantic 등) | `design-preview/colors.html` |
+| 3. 폰트 | 제목/본문 폰트, 크기 체계, 줄간격 | `design-preview/typography.html` |
+| 4. 화면 설정 & 스페이싱 | 브레이크포인트, 간격 체계, 접근성 기준 | - |
+| 5. 컴포넌트 | 버튼, 입력, 카드, 네비 등 기본 UI | `design-preview/components.html` |
+| 6. 아이콘 | 필요 아이콘 목록, 라이브러리 선택 | - |
+| 7. MVP 제작 | 기술 스택 논의 + 실제 코드 구현 | MVP 코드 |
+
+**특징:**
+- 1~4단계 산출물(`ux-flow.md`, `ux-audit-report.md`)을 설계도로 활용
+- 이전 단계의 공통 컴포넌트, UX 라이팅 가이드를 그대로 반영
+- 감사에서 발견된 접근성 이슈를 코드에 직접 적용
+- 각 Phase 확정 즉시 `design-system.md`에 기록 (세션 끊겨도 진행 상태 유지)
+- 스페이싱 시스템 (4px/8px 그리드) + 접근성 기준 (색상 대비 4.5:1, 터치 영역 44px)
+
 ---
 
 ## 이터레이션
@@ -130,6 +154,8 @@ Claude Code에서 아래 명령어를 입력하면 됩니다:
 | 감사에서 문제 정의 자체가 흔들림 | → 1단계 (`/1-ux-problem-definer`) |
 | 프로토타입 보고 흐름 변경 필요 | → 2단계 (`/2-ux-flow-designer`) |
 
+4단계까지만 하고 5단계는 나중에 진행하는 것도 가능합니다.
+
 ---
 
 ## 파일 구조
@@ -140,6 +166,7 @@ ux-design/SKILL.md              ← 오케스트레이터
 2-ux-flow-designer/SKILL.md     ← 2단계: 흐름 설계
 3-ux-audit/SKILL.md             ← 3단계: UX 감사
 4-ux-prototype/SKILL.md         ← 4단계: 프로토타입
+5-design-to-mvp/SKILL.md        ← 5단계: 디자인 시스템 & MVP
 commands/                       ← 수동 설치용 (동일 내용)
 install.sh                      ← 설치 스크립트
 ```
