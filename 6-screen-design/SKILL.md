@@ -14,23 +14,24 @@ description: 화면별 디자인 적용. 디자인 시스템을 화면별 UI 구
 ## 사전 확인
 
 필수 산출물:
-- `design-system.md` — 5단계 (컬러, 폰트, 스페이싱, 컴포넌트 상세 스펙)
-- `ux-flow.md` — 2단계 (화면별 UI 구조, 공통 컴포넌트, UX 라이팅)
+- `design-system/` 폴더 — 5단계 (6개 파일)
+- `ux-flow/` 폴더 — 2단계 (6개 파일)
 
 없으면 해당 단계 먼저 안내.
 
+**토큰 절약**: 아래 매핑된 파일을 **한 번씩만** read하고 그 내용을 바탕으로 작업. 같은 파일 반복 read 금지.
+
 ## 입력 자료 매핑
 
-| 요소 | 출처 |
+| 요소 | 출처 파일 |
 |------|------|
-| 화면 레이아웃 (뼈대) | `ux-flow.md` 화면별 UI 구조 |
-| 컴포넌트 배치 순서 | `ux-flow.md` 화면별 UI 구조 |
-| 콘텐츠 우선순위 | `ux-flow.md` 화면별 UI 구조 |
-| 상태별 화면 | `ux-flow.md` 화면별 UI 구조 |
-| 사용할 컴포넌트 | `design-system.md` 컴포넌트 상세 스펙 |
-| 색상/폰트/스페이싱 | `design-system.md` 디자인 토큰 |
-| 아이콘 | `design-system.md` 아이콘 |
-| 텍스트/문구 | `ux-flow.md` UX 라이팅 |
+| 화면 레이아웃, 컴포넌트 배치, 우선순위, 상태별 화면 | `ux-flow/04-screen-ui-structure.md` |
+| 텍스트/문구 (UX 라이팅) | `ux-flow/05-global-components.md` |
+| 사용할 컴포넌트 (variants, 상태) | `design-system/05-components.md` |
+| 색상 토큰 | `design-system/02-colors.md` |
+| 폰트 토큰 | `design-system/03-typography.md` |
+| 스페이싱 토큰 | `design-system/04-spacing.md` |
+| 아이콘 | `design-system/06-icons.md` |
 
 ## 진행 순서
 
